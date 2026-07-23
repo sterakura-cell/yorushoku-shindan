@@ -198,6 +198,14 @@
   .cross-promo-btn .em { font-size: 26px; line-height: 1; }
   .cross-promo-btn .nm { font-size: 12px; }
   .cross-promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.4); }
+  .elun-card { margin-top: 24px; padding: 18px 16px 15px; border-radius: 16px; background: linear-gradient(160deg, #2a2036, #201829); border: 1.5px solid var(--gold); text-align: center; }
+  .elun-eyebrow { font-size: 11px; letter-spacing: 1.5px; color: var(--gold); font-weight: bold; }
+  .elun-title { font-size: 17px; font-weight: 900; color: var(--pink); margin: 7px 0 5px; line-height: 1.5; }
+  .elun-sub { font-size: 12.5px; color: var(--text-light); line-height: 1.75; margin-bottom: 14px; }
+  .elun-sub b { color: var(--gold); }
+  .elun-btn { display: block; padding: 13px; border-radius: 12px; background: linear-gradient(135deg, #e8c26a, #cf9f45); color: #241a10; font-weight: 900; font-size: 14.5px; text-decoration: none; box-shadow: 0 4px 14px rgba(232,194,106,.28); transition: transform .15s ease; }
+  .elun-btn:hover { transform: translateY(-2px); }
+  .elun-note { font-size: 10.5px; color: var(--text-light); margin-top: 9px; }
 
   footer { width: 100%; max-width: 520px; padding: 0 20px 28px; font-size: 10.5px; color: #6e6180; text-align: center; line-height: 1.8; }
   footer b { color: #8d7fa1; }
@@ -277,6 +285,13 @@
 
       <button class="btn secondary" onclick="restart()">もう一度診断する</button>
       <button class="btn ghost" onclick="showAllTypes()">全16タイプを見てみる</button>
+      <div class="elun-card">
+        <div class="elun-eyebrow">— 夜の世界は、目元が武器 —</div>
+        <div class="elun-title">💄 次は【目元16タイプ診断】</div>
+        <div class="elun-sub">新宿のまつエクサロン <b>Elun</b>｜LEDマツエク ¥6,500〜・完全個室<br>あなたに似合うまつエク・まつげパーマを無料で診断</div>
+        <a class="elun-btn" href="https://diagnosis.soter-info.com/?utm_source=yorushoku&utm_medium=referral&utm_campaign=night-to-elun" target="_blank" rel="noopener" onclick="track('bridge_click',{to:'elun_eyemake'})">目元タイプを診断する →</a>
+        <div class="elun-note">※新宿エリアで実際に通えるサロンです</div>
+      </div>
       <div class="cross-promo">
         <div class="cross-promo-title">🎁 ほかのタイプ診断もやってみる</div>
         <div class="cross-promo-row">
