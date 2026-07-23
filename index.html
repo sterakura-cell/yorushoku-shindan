@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="夜職タイプ診断 🍾 あなたは何タイプ？">
-<meta name="twitter:description" content="12問で判定！決め台詞（コール風）つきの16タイプ診断。">
+<meta name="twitter:description" content="12問で判定！シャンパンコール女王？塩対応No.1？聞き上手ママ？決め台詞つきの16タイプ診断。">
 <meta name="twitter:image" content="https://yorushoku.soter-info.com/og.png">
 <link rel="canonical" href="https://yorushoku.soter-info.com/">
 <script type="application/ld+json">
@@ -191,6 +191,13 @@
 
   .cross-link { text-align: center; margin-top: 18px; font-size: 13.5px; }
   .cross-link a { color: var(--gold); font-weight: bold; }
+  .cross-promo { margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--border); }
+  .cross-promo-title { text-align: center; font-size: 13px; font-weight: bold; color: var(--text-light); margin-bottom: 12px; }
+  .cross-promo-row { display: flex; gap: 8px; }
+  .cross-promo-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 4px; border-radius: 14px; text-decoration: none; font-weight: bold; border: 1.5px solid var(--pink); color: var(--pink); background: var(--card2); transition: transform .15s ease, box-shadow .15s ease; }
+  .cross-promo-btn .em { font-size: 26px; line-height: 1; }
+  .cross-promo-btn .nm { font-size: 12px; }
+  .cross-promo-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.4); }
 
   footer { width: 100%; max-width: 520px; padding: 0 20px 28px; font-size: 10.5px; color: #6e6180; text-align: center; line-height: 1.8; }
   footer b { color: #8d7fa1; }
@@ -270,7 +277,14 @@
 
       <button class="btn secondary" onclick="restart()">もう一度診断する</button>
       <button class="btn ghost" onclick="showAllTypes()">全16タイプを見てみる</button>
-      <div class="cross-link">🔥 ヤンキー派は <a href="https://yankee.soter-info.com/">ヤンキータイプ診断</a> ／ 🐶 <a href="https://wanko.soter-info.com/">わんこ診断</a> ／ 🐱 <a href="https://neko.soter-info.com/">にゃんこ診断</a></div>
+      <div class="cross-promo">
+        <div class="cross-promo-title">🎁 ほかのタイプ診断もやってみる</div>
+        <div class="cross-promo-row">
+          <a class="cross-promo-btn" href="https://wanko.soter-info.com/" target="_blank" rel="noopener"><span class="em">🐶</span><span class="nm">わんこ</span></a>
+          <a class="cross-promo-btn" href="https://neko.soter-info.com/" target="_blank" rel="noopener"><span class="em">🐱</span><span class="nm">にゃんこ</span></a>
+          <a class="cross-promo-btn" href="https://yankee.soter-info.com/" target="_blank" rel="noopener"><span class="em">🔥</span><span class="nm">ヤンキー</span></a>
+        </div>
+      </div>
     </section>
 
     <!-- ALL TYPES -->
