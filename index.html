@@ -178,6 +178,7 @@
   .share-btn { flex: 1; padding: 12px 6px; font-size: 14px; font-weight: bold; font-family: inherit; border: none; border-radius: 10px; cursor: pointer; color: #fff; }
   .share-x { background: #000; border: 1px solid #444; }
   .share-line { background: #06c755; }
+  .share-mail { background: #5b4b8a; }
   .share-copy { background: var(--pink); }
 
   .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -261,6 +262,9 @@
       <div class="share-row">
         <button class="share-btn share-x" onclick="shareX()">Xでシェア</button>
         <button class="share-btn share-line" onclick="shareLine()">LINEで送る</button>
+      </div>
+      <div class="share-row">
+        <button class="share-btn share-mail" onclick="shareMail()">📧 メールで送る</button>
         <button class="share-btn share-copy" onclick="copyResult()">コピー</button>
       </div>
 
@@ -661,6 +665,12 @@ function shareLine() {
 }
 function copyResult() {
   navigator.clipboard.writeText(shareText() + "\n" + shareUrl()).then(() => toast("結果をコピーしました 🥂")).catch(() => toast("コピーできませんでした"));
+}
+function shareMail() {
+  const t = TYPES[lastResult.code];
+  const subject = "夜職タイプ診断の結果：『" + t.name + "』" + t.emoji;
+  const body = shareText() + "\n\n▼あなたもやってみる\n" + shareUrl() + "\n\n※このメールはあなた自身の操作で作成されています。宛先はご自由にどうぞ。";
+  window.location.href = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 }
 
 function saveResultImage() {
