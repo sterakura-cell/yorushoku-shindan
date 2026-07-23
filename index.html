@@ -566,9 +566,14 @@ function show(id) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function track(name, params) {
+  if (typeof gtag === "function") gtag("event", name, params || {});
+}
+
 function startQuiz() {
   uName = $("uname").value.trim() || "あなた";
   answers = []; currentQ = 0;
+  track("quiz_start");
   show("screen-quiz"); renderQuestion();
 }
 
@@ -609,6 +614,7 @@ function finish() {
 
 function renderResult() {
   const t = TYPES[lastResult.code];
+  track("diagnosis_complete", { type_code: lastResult.code, type_name: (t && t.name) || "" });
   $("result-for").textContent = uName + " が夜職デビューしたら…";
   $("result-emoji").innerHTML = typeArt(lastResult.code);
   $("result-code").textContent = lastResult.code.split("").join(" ");
@@ -658,15 +664,19 @@ function shareText() {
 }
 function shareUrl() { return "https://yorushoku.soter-info.com/t/" + lastResult.code + ".html"; }
 function shareX() {
+  track("share", { method: "x", type_code: lastResult ? lastResult.code : "" });
   window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(shareUrl()), "_blank");
 }
 function shareLine() {
+  track("share", { method: "line", type_code: lastResult ? lastResult.code : "" });
   window.open("https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(shareUrl()) + "&text=" + encodeURIComponent(shareText()), "_blank");
 }
 function copyResult() {
+  track("share", { method: "copy", type_code: lastResult ? lastResult.code : "" });
   navigator.clipboard.writeText(shareText() + "\n" + shareUrl()).then(() => toast("結果をコピーしました 🥂")).catch(() => toast("コピーできませんでした"));
 }
 function shareMail() {
+  track("share", { method: "mail", type_code: lastResult ? lastResult.code : "" });
   const t = TYPES[lastResult.code];
   const subject = "夜職タイプ診断の結果：『" + t.name + "』" + t.emoji;
   const body = shareText() + "\n\n▼あなたもやってみる\n" + shareUrl() + "\n\n※このメールはあなた自身の操作で作成されています。宛先はご自由にどうぞ。";
@@ -675,6 +685,7 @@ function shareMail() {
 
 function saveResultImage() {
   const code = lastResult.code, t = TYPES[code];
+  track("share", { method: "save_image", type_code: code });
   const cv = document.createElement("canvas");
   cv.width = 1080; cv.height = 1080;
   const ctx = cv.getContext("2d");
