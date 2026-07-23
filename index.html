@@ -11,14 +11,14 @@
 <meta property="og:site_name" content="夜職タイプ診断">
 <meta property="og:title" content="夜職タイプ診断 🍾 あなたは何タイプ？">
 <meta property="og:description" content="12問で判定！シャンパンコール女王？塩対応No.1？聞き上手ママ？決め台詞つきの16タイプ診断。">
-<meta property="og:url" content="https://yashoku.soter-info.com/">
-<meta property="og:image" content="https://yashoku.soter-info.com/og.png">
+<meta property="og:url" content="https://yorushoku.soter-info.com/">
+<meta property="og:image" content="https://yorushoku.soter-info.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="夜職タイプ診断 🍾 あなたは何タイプ？">
 <meta name="twitter:description" content="12問で判定！決め台詞（コール風）つきの16タイプ診断。">
-<meta name="twitter:image" content="https://yashoku.soter-info.com/og.png">
+<meta name="twitter:image" content="https://yorushoku.soter-info.com/og.png">
 <style>
   :root {
     --bg: #140f1e;
@@ -603,7 +603,7 @@ function shareText() {
   const t = TYPES[lastResult.code];
   return uName + " が夜職デビューしたら『" + t.name + "』でした " + t.emoji + "\n「" + t.mic + "」\n#夜職タイプ診断";
 }
-function shareUrl() { return "https://yashoku.soter-info.com/t/" + lastResult.code + ".html"; }
+function shareUrl() { return "https://yorushoku.soter-info.com/t/" + lastResult.code + ".html"; }
 function shareX() {
   window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText()) + "&url=" + encodeURIComponent(shareUrl()), "_blank");
 }
@@ -638,10 +638,10 @@ function saveResultImage() {
     ctx.fillStyle = "#f5eef7"; ctx.font = "bold 33px sans-serif";
     wrapText(ctx, "「" + t.mic + "」", 540, 908, 960, 43);
     ctx.fillStyle = "#6e6180"; ctx.font = "bold 30px sans-serif";
-    ctx.fillText("yashoku.soter-info.com", 540, 1040);
+    ctx.fillText("yorushoku.soter-info.com", 540, 1040);
     cv.toBlob(async (blob) => {
       if (!blob) { toast("画像の生成に失敗しました"); return; }
-      const file = new File([blob], "yashoku-" + code + ".png", { type: "image/png" });
+      const file = new File([blob], "yorushoku-" + code + ".png", { type: "image/png" });
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         try { await navigator.share({ files: [file], text: shareText() }); return; }
         catch (e) { if (e.name === "AbortError") return; }

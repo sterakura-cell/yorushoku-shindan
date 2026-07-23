@@ -10,7 +10,7 @@ const ROOT = path.join(__dirname, "..");
 
 const CONFIG = {
   siteName: "夜職タイプ診断",
-  domain: "https://yashoku.soter-info.com",
+  domain: "https://yorushoku.soter-info.com",
   hashtag: "#夜職タイプ診断",
   bg: { r: 0x14, g: 0x0f, b: 0x1e },   // --bg
   bar: { r: 0xf0, g: 0x62, b: 0x92 },  // --pink
