@@ -14,7 +14,7 @@
 - **ビルド不要の静的サイト**。`index.html` 1ファイルに HTML/CSS/JS 全部入り。
 - ホスティングは **GitHub Pages**（`main` 配信）。`git push` で自動デプロイ。
 - イラストは `img/<CODE>.png` を表示、失敗時は JS内蔵SVG（`castSVG()`）にフォールバック。**現状のimg/はSVGを512pxにラスタライズしたPNG**（AI画像への差し替え候補）。
-- テーマはネオン紫×ピンク×金。GA4は未設置（TODO）。
+- テーマはネオン紫×ピンク×金。GA4計測 G-7DQW435E3W 導入済み。
 
 ## ファイル構成
 
@@ -70,7 +70,7 @@ gh api repos/sterakura-cell/yorushoku-shindan/pages/builds/latest --jq .status  
 - `CNAME` に `yorushoku.soter-info.com`。DNSは **Squarespace Domains**（CNAME yorushoku→sterakura-cell.github.io）。HTTPS強制済み。旧 `yashoku` レコードが残っているが未使用（実害なし）。
 
 ## TODO
-- GA4計測タグ未設置。イラストのAI画像化。
+- イラストのAI画像化（現状SVG）。
 
 ## リポジトリ
 `sterakura-cell/yorushoku-shindan`（public）。
